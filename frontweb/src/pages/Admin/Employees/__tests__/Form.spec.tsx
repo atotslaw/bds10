@@ -33,7 +33,7 @@ describe('Employee form create tests', () => {
         const submitButton = screen.getByRole('button', { name: /salvar/i})
         userEvent.click(submitButton);
 
-        await waitFor(() => {
+        waitFor(() => {
             const toastElement = screen.getByText('Cadastrado com sucesso');
             expect(toastElement).toBeInTheDocument();
         });
